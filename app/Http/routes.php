@@ -11,13 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::post('login','Auth\AuthController@login');
+Route::post('register','Auth\AuthController@register');
 
 
-Route::post('oauth/access_token', function() {
-    return Response::json(Authorizer::issueAccessToken());
-});
+Route::resource('user', 'UserController', ['except' => ['create']]);
 
 Route::resource('quiz', 'QuizController');

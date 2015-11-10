@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use Illuminate\Support\Facades\Auth;
-use JWTAuth;
+use Tymon\JWTAuth\Facades\JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -29,7 +29,7 @@ class AuthController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function postRegister(Request $request)
+    public function register(Request $request)
     {
         $validator = $this->registerValidator($request->all());
 
@@ -39,27 +39,29 @@ class AuthController extends Controller
 
         Auth::login($this->create($request->all()));
 
-        return $this->postLogin($request);
+        return $this->login($request);
     }
 
-    public function postLogin(Request $request)
+    public function login(Request $request)
     {
+
         $validator = $this->loginValidator($request->all());
 
         if ($validator->fails()) {
             return response()->json(['error'=>$validator->errors()->all()],400);
         }
 
+        // grab credentials from the request
         $credentials = $request->only('email', 'password');
 
         try {
             // attempt to verify the credentials and create a token for the user
             if (! $token = JWTAuth::attempt($credentials)) {
-                return response()->json(['error' => 'Invalid credentials'], 401);
+                return response()->json(['error' => 'invalid_credentials'], 401);
             }
         } catch (JWTException $e) {
             // something went wrong whilst attempting to encode the token
-            return response()->json(['error' => 'Could not create token'], 500);
+            return response()->json(['error' => 'could_not_create_token'], 500);
         }
 
         // all good so return the token
