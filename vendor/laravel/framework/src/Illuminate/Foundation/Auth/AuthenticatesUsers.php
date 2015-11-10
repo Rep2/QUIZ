@@ -11,6 +11,20 @@ trait AuthenticatesUsers
     use RedirectsUsers;
 
     /**
+     * Show the application login form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getLogin()
+    {
+        if (view()->exists('auth.authenticate')) {
+            return view('auth.authenticate');
+        }
+
+        return view('auth.login');
+    }
+
+    /**
      * Handle a login request to the application.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -49,6 +63,26 @@ trait AuthenticatesUsers
             ->withErrors([
                 $this->loginUsername() => $this->getFailedLoginMessage(),
             ]);
+    }
+
+    /**
+     * Send the response after the user was authenticated.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  bool  $throttles
+     * @return \Illuminate\Http\Response
+     */
+    protected function handleUserWasAuthenticated(Request $request, $throttles)
+    {
+        if ($throttles) {
+            $this->clearLoginAttempts($request);
+        }
+
+        if (method_exists($this, 'authenticated')) {
+            return $this->authenticated($request, Auth::user());
+        }
+
+        return redirect()->intended($this->redirectPath());
     }
 
     /**

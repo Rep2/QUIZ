@@ -15,10 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Authentication routes...
-Route::post('auth/login', 'Auth\AuthController@postLogin');
 
-// Registration routes...
-Route::post('auth/register', 'Auth\AuthController@postRegister');
+Route::post('oauth/access_token', function() {
+    return Response::json(Authorizer::issueAccessToken());
+});
 
 Route::resource('quiz', 'QuizController');
