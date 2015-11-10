@@ -1,0 +1,283 @@
+{
+	"id": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
+	"name": "Quiz",
+	"description": "",
+	"order": [
+		"9881ff83-c63e-68ef-a73c-60a61956818b",
+		"f8d4e904-7c2c-a303-ff73-62428aa33f12",
+		"381fcc7b-8e4a-980d-0abb-e82fa1259bc6",
+		"575a49f2-0a04-7a10-d5a1-f2c29621caf7",
+		"cb23f94e-ab66-ce6a-dcb3-ffb30da12787",
+		"2b6b1e18-8a42-7ca3-4613-70741d1f1c42",
+		"e3709629-fa30-c9ef-6386-9f22c7fd487d",
+		"e198a9c8-e200-4ab5-d5f3-74f706fe9552",
+		"908dd86e-3b08-c8fb-0e17-8f2dd7366497"
+	],
+	"folders": [],
+	"timestamp": 1447159754026,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "2b6b1e18-8a42-7ca3-4613-70741d1f1c42",
+			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4ODg4XC9hdXRoX3Rva2VuIiwiaWF0IjoiMTQ0NzE3OTE2NSIsImV4cCI6IjE0NDc1MzkxNjUiLCJuYmYiOiIxNDQ3MTc5MTY1IiwianRpIjoiZjZiOTVkMDMyMGNjMjVhZGY1ZGJhMWFhMzA4MWYwOGQifQ.YV5As-c9TkxvTBR2uWsJFGY48GRR5KL0dc7LNXA3T98\n",
+			"url": "http://localhost:8888/quiz/1",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
+			"data": [
+				{
+					"key": "email",
+					"value": "ivan@gmail.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "123456",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "QuizGet",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1447180061919,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "381fcc7b-8e4a-980d-0abb-e82fa1259bc6",
+			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4ODg4XC9hdXRoX3Rva2VuIiwiaWF0IjoiMTQ0NzE3MTI3NSIsImV4cCI6IjE0NDc1MzEyNzUiLCJuYmYiOiIxNDQ3MTcxMjc1IiwianRpIjoiMjMxMzI4OWJiYmIxZjI3MTQ3NzVkZWJjZTIyMDM1YmIifQ.F4oeyYSVqz_yWbL8xA4N7VFnsoeAleFLVEiEiyGPNQo\n",
+			"url": "http://localhost:8888/user/10",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "DELETE",
+			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
+			"data": [],
+			"dataMode": "params",
+			"name": "Delete",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1447174575196,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "575a49f2-0a04-7a10-d5a1-f2c29621caf7",
+			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4ODg4XC9hdXRoX3Rva2VuIiwiaWF0IjoiMTQ0NzE3OTE2NSIsImV4cCI6IjE0NDc1MzkxNjUiLCJuYmYiOiIxNDQ3MTc5MTY1IiwianRpIjoiZjZiOTVkMDMyMGNjMjVhZGY1ZGJhMWFhMzA4MWYwOGQifQ.YV5As-c9TkxvTBR2uWsJFGY48GRR5KL0dc7LNXA3T98\n",
+			"url": "http://localhost:8888/quiz",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "email",
+					"value": "ivan@gmail.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "123456",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1447179233225,
+			"name": "QuizAll",
+			"description": "",
+			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
+			"responses": []
+		},
+		{
+			"id": "908dd86e-3b08-c8fb-0e17-8f2dd7366497",
+			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4ODg4XC9hdXRoX3Rva2VuIiwiaWF0IjoiMTQ0NzE3OTE2NSIsImV4cCI6IjE0NDc1MzkxNjUiLCJuYmYiOiIxNDQ3MTc5MTY1IiwianRpIjoiZjZiOTVkMDMyMGNjMjVhZGY1ZGJhMWFhMzA4MWYwOGQifQ.YV5As-c9TkxvTBR2uWsJFGY48GRR5KL0dc7LNXA3T98\n",
+			"url": "http://localhost:8888/user/1/quizzes",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
+			"data": [],
+			"dataMode": "params",
+			"name": "UserQuizzes",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1447189304675,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "9881ff83-c63e-68ef-a73c-60a61956818b",
+			"headers": "",
+			"url": "http://localhost:8888/auth_token",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "email",
+					"value": "ivan@gmail.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "123456",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1447171276505,
+			"name": "LogIn",
+			"description": "",
+			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
+			"responses": []
+		},
+		{
+			"id": "cb23f94e-ab66-ce6a-dcb3-ffb30da12787",
+			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4ODg4XC9hdXRoX3Rva2VuIiwiaWF0IjoiMTQ0NzE3ODc3NSIsImV4cCI6IjE0NDc1Mzg3NzUiLCJuYmYiOiIxNDQ3MTc4Nzc1IiwianRpIjoiOWI4OGNmYTY4NDdkNDMzZWQxY2JmZDAyMTc3N2Y3YjkifQ.I9Tk1N436l75ZJsLympASsjbeJAHHG3TRdG9kOCzxjY\n",
+			"url": "http://localhost:8888/quiz",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "asdasd",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "asdasd",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "public",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1447178800985,
+			"name": "QuizCreate",
+			"description": "",
+			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
+			"responses": []
+		},
+		{
+			"id": "e198a9c8-e200-4ab5-d5f3-74f706fe9552",
+			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4ODg4XC9hdXRoX3Rva2VuIiwiaWF0IjoiMTQ0NzE3OTE2NSIsImV4cCI6IjE0NDc1MzkxNjUiLCJuYmYiOiIxNDQ3MTc5MTY1IiwianRpIjoiZjZiOTVkMDMyMGNjMjVhZGY1ZGJhMWFhMzA4MWYwOGQifQ.YV5As-c9TkxvTBR2uWsJFGY48GRR5KL0dc7LNXA3T98\n",
+			"url": "http://localhost:8888/quiz/1",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "DELETE",
+			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
+			"data": [],
+			"dataMode": "urlencoded",
+			"name": "QuizDelete",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1447180725927,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "e3709629-fa30-c9ef-6386-9f22c7fd487d",
+			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4ODg4XC9hdXRoX3Rva2VuIiwiaWF0IjoiMTQ0NzE3OTE2NSIsImV4cCI6IjE0NDc1MzkxNjUiLCJuYmYiOiIxNDQ3MTc5MTY1IiwianRpIjoiZjZiOTVkMDMyMGNjMjVhZGY1ZGJhMWFhMzA4MWYwOGQifQ.YV5As-c9TkxvTBR2uWsJFGY48GRR5KL0dc7LNXA3T98\n",
+			"url": "http://localhost:8888/quiz/1",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "PUT",
+			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
+			"data": [
+				{
+					"key": "description",
+					"value": "ivan",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "s22",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "QuizEdit",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1447180639532,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "f8d4e904-7c2c-a303-ff73-62428aa33f12",
+			"headers": "",
+			"url": "http://localhost:8888/user",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "email",
+					"value": "ivan@gmail.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "123456",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1447170789927,
+			"name": "Register",
+			"description": "",
+			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
+			"responses": []
+		}
+	]
+}

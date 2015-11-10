@@ -30,6 +30,10 @@ class Kernel extends HttpKernel
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
 
-        'csrf' => \App\Http\Middleware\VerifyCsrfToken::class,
+        'log' => \App\Http\Middleware\Log::class,
+
+        'jwt.auth' => 'Tymon\JWTAuth\Middleware\GetUserFromToken',
+        'jwt.authId' => \App\Http\Middleware\GetUserFromTokenWithId::class,
+        'jwt.refresh' => 'Tymon\JWTAuth\Middleware\RefreshToken',
      ];
 }

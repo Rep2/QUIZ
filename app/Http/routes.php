@@ -10,11 +10,12 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::group(['middleware' => 'log'], function () {
+    Route::post('auth_token', 'Auth\AuthController@login');
 
-Route::post('login','Auth\AuthController@login');
-Route::post('register','Auth\AuthController@register');
 
+    Route::resource('user', 'UserController', ['except' => ['create', 'edit']]);
 
-Route::resource('user', 'UserController', ['except' => ['create']]);
-
-Route::resource('quiz', 'QuizController');
+    Route::get('user/{id}/quizzes', 'QuizController@userQuizzes');
+    Route::resource('quiz', 'QuizController', ['except' => ['create', 'edit']]);
+});

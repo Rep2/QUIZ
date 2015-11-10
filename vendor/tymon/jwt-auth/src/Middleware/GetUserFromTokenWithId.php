@@ -14,7 +14,7 @@ class GetUserFromToken extends BaseMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, \Closure $next)
+    public function handle($request, $id, \Closure $next)
     {
         if (! $token = $this->auth->setRequest($request)->getToken()) {
             return $this->respond('tymon.jwt.absent', 'token_not_provided', 400);
@@ -34,6 +34,6 @@ class GetUserFromToken extends BaseMiddleware
 
         $this->events->fire('tymon.jwt.valid', $user);
 
-        return $next($request, $user);
+        return $next($id);
     }
 }
