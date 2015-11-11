@@ -3,15 +3,18 @@
 	"name": "Quiz",
 	"description": "",
 	"order": [
-		"9881ff83-c63e-68ef-a73c-60a61956818b",
 		"f8d4e904-7c2c-a303-ff73-62428aa33f12",
-		"381fcc7b-8e4a-980d-0abb-e82fa1259bc6",
+		"9881ff83-c63e-68ef-a73c-60a61956818b",
+		"d138738e-b493-e8f4-0285-b33db2e73a91",
+		"9536f218-bf5c-a422-0741-11165d739e1d",
+		"3b6a86b6-b68c-dd37-49da-948816c1b5cb",
 		"575a49f2-0a04-7a10-d5a1-f2c29621caf7",
 		"cb23f94e-ab66-ce6a-dcb3-ffb30da12787",
 		"2b6b1e18-8a42-7ca3-4613-70741d1f1c42",
 		"e3709629-fa30-c9ef-6386-9f22c7fd487d",
 		"e198a9c8-e200-4ab5-d5f3-74f706fe9552",
-		"908dd86e-3b08-c8fb-0e17-8f2dd7366497"
+		"908dd86e-3b08-c8fb-0e17-8f2dd7366497",
+		"381fcc7b-8e4a-980d-0abb-e82fa1259bc6"
 	],
 	"folders": [],
 	"timestamp": 1447159754026,
@@ -21,21 +24,21 @@
 	"requests": [
 		{
 			"id": "2b6b1e18-8a42-7ca3-4613-70741d1f1c42",
-			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4ODg4XC9hdXRoX3Rva2VuIiwiaWF0IjoiMTQ0NzE3OTE2NSIsImV4cCI6IjE0NDc1MzkxNjUiLCJuYmYiOiIxNDQ3MTc5MTY1IiwianRpIjoiZjZiOTVkMDMyMGNjMjVhZGY1ZGJhMWFhMzA4MWYwOGQifQ.YV5As-c9TkxvTBR2uWsJFGY48GRR5KL0dc7LNXA3T98\n",
-			"url": "http://46.101.238.99/quiz/1",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "http://46.101.238.99/quiz/{{quiz_id}}",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "GET",
 			"data": [
 				{
 					"key": "name",
-					"value": "asdasd",
+					"value": "{{quiz_name}}",
 					"type": "text",
 					"enabled": true
 				},
 				{
 					"key": "description",
-					"value": "asdasd",
+					"value": "{{quiz_desc}}",
 					"type": "text",
 					"enabled": true
 				},
@@ -48,10 +51,10 @@
 			],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar schema = {\n    \"title\": \"Quiz\",\n    \"type\": \"object\",\n    \"properties\":{\n        \"id\":{\n            \"type\":\"string\"\n        },\n        \"name\":{\n            \"type\":\"string\"\n        },\n        \"description\":{\n            \"type\":\"string\"\n        },\n        \"public\":{\n            \"type\":\"string\"\n        },\n        \"owner_id\":{\n            \"type\":\"string\"\n        },\n        \"created_at\":{\n            \"type\":\"string\"\n        },\n        \"updated_at\":{\n            \"type\":\"string\"\n        },\n    },\n    \"required\": [\"id\", \"name\", \"description\", \"public\", \"owner_id\", \"created_at\", \"updated_at\"]\n}\n\nconsole.log(tv4.error);\ntests[\"Valid response\"] = tv4.validate(JSON.parse(responseBody), schema) === true;",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1447198373449,
+			"time": 1447209222717,
 			"name": "QuizGet",
 			"description": "",
 			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
@@ -59,59 +62,66 @@
 		},
 		{
 			"id": "381fcc7b-8e4a-980d-0abb-e82fa1259bc6",
-			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4ODg4XC9hdXRoX3Rva2VuIiwiaWF0IjoiMTQ0NzE3MTI3NSIsImV4cCI6IjE0NDc1MzEyNzUiLCJuYmYiOiIxNDQ3MTcxMjc1IiwianRpIjoiMjMxMzI4OWJiYmIxZjI3MTQ3NzVkZWJjZTIyMDM1YmIifQ.F4oeyYSVqz_yWbL8xA4N7VFnsoeAleFLVEiEiyGPNQo\n",
-			"url": "http://46.101.238.99/user/10",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "http://46.101.238.99/user/{{user_id}}",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "DELETE",
 			"data": [],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"User deleted\"] = JSON.parse(responseBody).message === \"User deleted\"",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1447198352594,
-			"name": "Delete",
+			"time": 1447208420879,
+			"name": "DeleteUser",
+			"description": "",
+			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
+			"responses": []
+		},
+		{
+			"id": "3b6a86b6-b68c-dd37-49da-948816c1b5cb",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "http://46.101.238.99/user/{{user_id}}",
+			"preRequestScript": "function makeid()\n{\n    var text = \"\";\n    var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\n\n    for( var i=0; i < 10; i++ )\n        text += possible.charAt(Math.floor(Math.random() * possible.length));\n\n    return text;\n}\n\npostman.setEnvironmentVariable(\"update_email\", makeid() + \"@gmail.com\");",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "email",
+					"value": "{{update_email}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar schema = {\n    \"title\": \"User\",\n    \"type\": \"object\",\n    \"properties\":{\n        \"id\":{\n            \"type\":\"string\"\n        },\n        \"email\":{\n            \"type\":\"string\"\n        },\n        \"created_at\":{\n            \"type\":\"string\"\n        },\n        \"updated_at\":{\n            \"type\":\"string\"\n        },\n    },\n    \"required\": [\"id\", \"email\", \"created_at\", \"updated_at\"]\n}\n\nconsole.log(tv4.error);\ntests[\"Valid response\"] = tv4.validate(JSON.parse(responseBody), schema) === true;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1447208245238,
+			"name": "EditUser",
 			"description": "",
 			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
 			"responses": []
 		},
 		{
 			"id": "575a49f2-0a04-7a10-d5a1-f2c29621caf7",
-			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4ODg4XC9hdXRoX3Rva2VuIiwiaWF0IjoiMTQ0NzE3OTE2NSIsImV4cCI6IjE0NDc1MzkxNjUiLCJuYmYiOiIxNDQ3MTc5MTY1IiwianRpIjoiZjZiOTVkMDMyMGNjMjVhZGY1ZGJhMWFhMzA4MWYwOGQifQ.YV5As-c9TkxvTBR2uWsJFGY48GRR5KL0dc7LNXA3T98\n",
+			"headers": "Authorization: Bearer {{token}}\n",
 			"url": "http://46.101.238.99/quiz",
-			"preRequestScript": "",
-			"pathVariables": {},
-			"method": "GET",
-			"data": [],
-			"dataMode": "params",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1447198357825,
-			"name": "QuizAll",
-			"description": "",
-			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
-			"responses": []
-		},
-		{
-			"id": "908dd86e-3b08-c8fb-0e17-8f2dd7366497",
-			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4ODg4XC9hdXRoX3Rva2VuIiwiaWF0IjoiMTQ0NzE3OTE2NSIsImV4cCI6IjE0NDc1MzkxNjUiLCJuYmYiOiIxNDQ3MTc5MTY1IiwianRpIjoiZjZiOTVkMDMyMGNjMjVhZGY1ZGJhMWFhMzA4MWYwOGQifQ.YV5As-c9TkxvTBR2uWsJFGY48GRR5KL0dc7LNXA3T98\n",
-			"url": "http://46.101.238.99/user/1/quizzes",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "GET",
 			"data": [
 				{
 					"key": "name",
-					"value": "asdasd",
+					"value": "{{quiz_name}}",
 					"type": "text",
 					"enabled": true
 				},
 				{
 					"key": "description",
-					"value": "asdasd",
+					"value": "{{quiz_desc}}",
 					"type": "text",
 					"enabled": true
 				},
@@ -124,11 +134,81 @@
 			],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar schema = {\n    \"title\": \"User\",\n    \"type\": \"array\",\n    \"items\": {\n        \"type\": \"object\",\n        \"properties\":{\n            \"id\":{\n                \"type\":\"string\"\n            },\n            \"name\":{\n                \"type\":\"string\"\n            },\n            \"description\":{\n                \"type\":\"string\"\n            },\n            \"public\":{\n                \"type\":\"string\"\n            },\n            \"owner_id\":{\n                \"type\":\"string\"\n            },\n            \"created_at\":{\n                \"type\":\"string\"\n            },\n            \"updated_at\":{\n                \"type\":\"string\"\n            },\n        },\n        \"required\": [\"id\", \"name\", \"description\", \"public\", \"owner_id\", \"created_at\", \"updated_at\"]\n    }\n}\n\nconsole.log(tv4.error);\ntests[\"Valid response\"] = tv4.validate(JSON.parse(responseBody), schema) === true;",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1447198387765,
+			"time": 1447208815577,
+			"name": "GetAllQuizzes",
+			"description": "",
+			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
+			"responses": []
+		},
+		{
+			"id": "908dd86e-3b08-c8fb-0e17-8f2dd7366497",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "http://46.101.238.99/user/{{user_id}}/quizzes",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "{{quiz_name}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "{{quiz_desc}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "public",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar schema = {\n    \"title\": \"Quiz\",\n    \"type\": \"array\",\n    \"items\":{\n        \"type\": \"object\",\n        \"properties\":{\n            \"id\":{\n                \"type\":\"string\"\n            },\n            \"name\":{\n                \"type\":\"string\"\n            },\n            \"description\":{\n                \"type\":\"string\"\n            },\n            \"public\":{\n                \"type\":\"string\"\n            },\n            \"owner_id\":{\n                \"type\":\"string\"\n            },\n            \"created_at\":{\n                \"type\":\"string\"\n            },\n            \"updated_at\":{\n                \"type\":\"string\"\n            },\n        },\n        \"required\": [\"id\", \"name\", \"description\", \"public\", \"owner_id\", \"created_at\", \"updated_at\"]\n    }\n}\n\nconsole.log(tv4.error);\ntests[\"Valid response\"] = tv4.validate(JSON.parse(responseBody), schema) === true;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1447209543476,
 			"name": "UserQuizzes",
+			"description": "",
+			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
+			"responses": []
+		},
+		{
+			"id": "9536f218-bf5c-a422-0741-11165d739e1d",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "http://46.101.238.99/user/{{user_id}}",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "email",
+					"value": "{{reg_email}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "{{reg_password}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar schema = {\n    \"title\": \"User\",\n    \"type\": \"object\",\n    \"properties\":{\n        \"id\":{\n            \"type\":\"string\"\n        },\n        \"email\":{\n            \"type\":\"string\"\n        },\n        \"created_at\":{\n            \"type\":\"string\"\n        },\n        \"updated_at\":{\n            \"type\":\"string\"\n        },\n    },\n    \"required\": [\"id\", \"email\", \"created_at\", \"updated_at\"]\n}\n\nconsole.log(tv4.error);\ntests[\"Valid response\"] = tv4.validate(JSON.parse(responseBody), schema) === true;\n\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1447207677144,
+			"name": "GetUser",
 			"description": "",
 			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
 			"responses": []
@@ -143,23 +223,23 @@
 			"data": [
 				{
 					"key": "email",
-					"value": "ivan@gmail.com",
+					"value": "{{reg_email}}",
 					"type": "text",
 					"enabled": true
 				},
 				{
 					"key": "password",
-					"value": "123456",
+					"value": "{{reg_password}}",
 					"type": "text",
 					"enabled": true
 				}
 			],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar schema = {\n\t\"title\": \"LogIn\",\n    \"type\": \"object\",\n    \"properties\":{\n        \"id\":{\n             \"token\":\"string\"\n        }\n    },\n    \"required\": [\"token\"]\n}\n\nconsole.log(tv4.error);\ntests[\"Valid response\"] = tv4.validate(JSON.parse(responseBody), schema) === true;\n\npostman.setEnvironmentVariable(\"token\", JSON.parse(responseBody).token);",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1447198338916,
+			"time": 1447207579580,
 			"name": "LogIn",
 			"description": "",
 			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
@@ -167,21 +247,21 @@
 		},
 		{
 			"id": "cb23f94e-ab66-ce6a-dcb3-ffb30da12787",
-			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4ODg4XC9hdXRoX3Rva2VuIiwiaWF0IjoiMTQ0NzE3ODc3NSIsImV4cCI6IjE0NDc1Mzg3NzUiLCJuYmYiOiIxNDQ3MTc4Nzc1IiwianRpIjoiOWI4OGNmYTY4NDdkNDMzZWQxY2JmZDAyMTc3N2Y3YjkifQ.I9Tk1N436l75ZJsLympASsjbeJAHHG3TRdG9kOCzxjY\n",
+			"headers": "Authorization: Bearer {{token}}\n",
 			"url": "http://46.101.238.99/quiz",
-			"preRequestScript": "",
+			"preRequestScript": "function makeid()\n{\n    var text = \"\";\n    var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\n\n    for( var i=0; i < 15; i++ )\n        text += possible.charAt(Math.floor(Math.random() * possible.length));\n\n    return text;\n}\n\npostman.setEnvironmentVariable(\"quiz_name\", makeid());\npostman.setEnvironmentVariable(\"quiz_desc\", makeid());",
 			"pathVariables": {},
 			"method": "POST",
 			"data": [
 				{
 					"key": "name",
-					"value": "asdasd",
+					"value": "{{quiz_name}}",
 					"type": "text",
 					"enabled": true
 				},
 				{
 					"key": "description",
-					"value": "asdasd",
+					"value": "{{quiz_desc}}",
 					"type": "text",
 					"enabled": true
 				},
@@ -194,29 +274,61 @@
 			],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar schema = {\n    \"title\": \"Quiz\",\n    \"type\": \"object\",\n    \"properties\":{\n        \"id\":{\n            \"type\":\"integer\"\n        },\n        \"name\":{\n            \"type\":\"string\"\n        },\n        \"description\":{\n            \"type\":\"string\"\n        },\n        \"public\":{\n            \"type\":\"string\"\n        },\n        \"owner_id\":{\n            \"type\":\"string\"\n        },\n        \"created_at\":{\n            \"type\":\"string\"\n        },\n        \"updated_at\":{\n            \"type\":\"string\"\n        },\n    },\n    \"required\": [\"id\", \"name\", \"description\", \"public\", \"owner_id\", \"created_at\", \"updated_at\"]\n}\n\nconsole.log(tv4.error);\ntests[\"Valid response\"] = tv4.validate(JSON.parse(responseBody), schema) === true;\n\npostman.setEnvironmentVariable(\"quiz_id\", JSON.parse(responseBody).id);",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1447198368338,
+			"time": 1447209166936,
 			"name": "QuizCreate",
 			"description": "",
 			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
 			"responses": []
 		},
 		{
+			"id": "d138738e-b493-e8f4-0285-b33db2e73a91",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "http://46.101.238.99/user",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "email",
+					"value": "{{reg_email}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "{{reg_password}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar schema = {\n\t\"title\": \"Get all users\",\n    \"type\": \"array\",\n    \"items\": {\n        \"title\": \"Users\",\n        \"type\": \"object\",\n        \"properties\":{\n            \"id\":{\n                \"type\":\"string\"\n            },\n            \"email\":{\n                \"type\":\"string\"\n            },\n            \"created_at\":{\n                \"type\":\"string\"\n            },\n            \"updated_at\":{\n                \"type\":\"string\"\n            },\n        },\n        \"required\": [\"id\", \"email\", \"created_at\", \"updated_at\"]\n    }\n}\n\nconsole.log(tv4.error);\ntests[\"Valid response\"] = tv4.validate(JSON.parse(responseBody), schema) === true;\n\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1447206853665,
+			"name": "GetAllUsers",
+			"description": "",
+			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
+			"responses": []
+		},
+		{
 			"id": "e198a9c8-e200-4ab5-d5f3-74f706fe9552",
-			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4ODg4XC9hdXRoX3Rva2VuIiwiaWF0IjoiMTQ0NzE3OTE2NSIsImV4cCI6IjE0NDc1MzkxNjUiLCJuYmYiOiIxNDQ3MTc5MTY1IiwianRpIjoiZjZiOTVkMDMyMGNjMjVhZGY1ZGJhMWFhMzA4MWYwOGQifQ.YV5As-c9TkxvTBR2uWsJFGY48GRR5KL0dc7LNXA3T98\n",
-			"url": "http://46.101.238.99/quiz/1",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "http://46.101.238.99/quiz/{{quiz_id}}",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "DELETE",
 			"data": [],
 			"dataMode": "urlencoded",
 			"version": 2,
-			"tests": "",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Quiz deleted\"] = JSON.parse(responseBody).message === \"Quiz deleted\"",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1447198383528,
+			"time": 1447209415979,
 			"name": "QuizDelete",
 			"description": "",
 			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
@@ -224,31 +336,31 @@
 		},
 		{
 			"id": "e3709629-fa30-c9ef-6386-9f22c7fd487d",
-			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4ODg4XC9hdXRoX3Rva2VuIiwiaWF0IjoiMTQ0NzE3OTE2NSIsImV4cCI6IjE0NDc1MzkxNjUiLCJuYmYiOiIxNDQ3MTc5MTY1IiwianRpIjoiZjZiOTVkMDMyMGNjMjVhZGY1ZGJhMWFhMzA4MWYwOGQifQ.YV5As-c9TkxvTBR2uWsJFGY48GRR5KL0dc7LNXA3T98\n",
-			"url": "http://46.101.238.99/quiz/1",
-			"preRequestScript": "",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "http://46.101.238.99/quiz/{{quiz_id}}",
+			"preRequestScript": "function makeid()\n{\n    var text = \"\";\n    var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\n\n    for( var i=0; i < 15; i++ )\n        text += possible.charAt(Math.floor(Math.random() * possible.length));\n\n    return text;\n}\n\npostman.setEnvironmentVariable(\"edit_quiz_name\", makeid());\npostman.setEnvironmentVariable(\"edit_quiz_desc\", makeid());",
 			"pathVariables": {},
 			"method": "PUT",
 			"data": [
 				{
 					"key": "description",
-					"value": "ivan",
+					"value": "{{edit_quiz_name}}",
 					"type": "text",
 					"enabled": true
 				},
 				{
 					"key": "name",
-					"value": "s22",
+					"value": "{{edit_quiz_desc}}",
 					"type": "text",
 					"enabled": true
 				}
 			],
 			"dataMode": "urlencoded",
 			"version": 2,
-			"tests": "",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar schema = {\n    \"title\": \"Quiz\",\n    \"type\": \"object\",\n    \"properties\":{\n        \"id\":{\n            \"type\":\"string\"\n        },\n        \"name\":{\n            \"type\":\"string\"\n        },\n        \"description\":{\n            \"type\":\"string\"\n        },\n        \"public\":{\n            \"type\":\"string\"\n        },\n        \"owner_id\":{\n            \"type\":\"string\"\n        },\n        \"created_at\":{\n            \"type\":\"string\"\n        },\n        \"updated_at\":{\n            \"type\":\"string\"\n        },\n    },\n    \"required\": [\"id\", \"name\", \"description\", \"public\", \"owner_id\", \"created_at\", \"updated_at\"]\n}\n\nconsole.log(tv4.error);\ntests[\"Valid response\"] = tv4.validate(JSON.parse(responseBody), schema) === true;",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1447198377874,
+			"time": 1447209330221,
 			"name": "QuizEdit",
 			"description": "",
 			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
@@ -258,30 +370,30 @@
 			"id": "f8d4e904-7c2c-a303-ff73-62428aa33f12",
 			"headers": "",
 			"url": "http://46.101.238.99/user",
-			"preRequestScript": "",
+			"preRequestScript": "function makeid()\n{\n    var text = \"\";\n    var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\n\n    for( var i=0; i < 10; i++ )\n        text += possible.charAt(Math.floor(Math.random() * possible.length));\n\n    return text;\n}\n\npostman.setEnvironmentVariable(\"reg_email\", makeid() + \"@gmail.com\");\npostman.setEnvironmentVariable(\"reg_password\", makeid());",
 			"pathVariables": {},
 			"method": "POST",
 			"data": [
 				{
 					"key": "email",
-					"value": "ivan@gmail.com",
+					"value": "{{reg_email}}",
 					"type": "text",
 					"enabled": true
 				},
 				{
 					"key": "password",
-					"value": "123456",
+					"value": "{{reg_password}}",
 					"type": "text",
 					"enabled": true
 				}
 			],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar schema = {\n\t\"title\": \"Create user (Register)\",\n    \"type\": \"object\",\n    \"properties\":{\n        \"id\":{\n             \"type\":\"string\"\n        },\n        \"email\":{\n            \"type\":\"string\"\n        },\n        \"created_at\":{\n            \"type\":\"string\"\n        },\n        \"updated_at\":{\n            \"type\":\"string\"\n        },\n    },\n    \"required\": [\"id\", \"email\", \"created_at\", \"updated_at\"]\n}\n\nconsole.log(tv4.error);\ntests[\"Valid response\"] = tv4.validate(JSON.parse(responseBody), schema) === true;\n\npostman.setEnvironmentVariable(\"user_id\", JSON.parse(responseBody).id);",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1447198348143,
-			"name": "Register",
+			"time": 1447207647919,
+			"name": "UserCreate",
 			"description": "",
 			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
 			"responses": []
