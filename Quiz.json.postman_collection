@@ -3,6 +3,7 @@
 	"name": "Quiz",
 	"description": "",
 	"order": [
+		"6bae05b4-c8f8-2c21-3378-f9b49180c9b2",
 		"f8d4e904-7c2c-a303-ff73-62428aa33f12",
 		"9881ff83-c63e-68ef-a73c-60a61956818b",
 		"d138738e-b493-e8f4-0285-b33db2e73a91",
@@ -139,6 +140,38 @@
 			"helperAttributes": {},
 			"time": 1447208815577,
 			"name": "GetAllQuizzes",
+			"description": "",
+			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
+			"responses": []
+		},
+		{
+			"id": "6bae05b4-c8f8-2c21-3378-f9b49180c9b2",
+			"headers": "",
+			"url": "http://46.101.238.99/",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "email",
+					"value": "{{reg_email}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "{{reg_password}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1447212488570,
+			"name": "Index",
 			"description": "",
 			"collectionId": "01acfa9c-577d-0aa8-9c42-334a70c97a7a",
 			"responses": []
