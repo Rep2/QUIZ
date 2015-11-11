@@ -12,6 +12,7 @@
 */
 Route::group(['middleware' => 'log'], function () {
     Route::get('', 'UserController@getIndex');
+    Route::get('log', 'UserController@getLog');
 
     Route::post('auth_token', 'Auth\AuthController@login');
 

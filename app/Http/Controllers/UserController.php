@@ -168,4 +168,10 @@ class UserController extends Controller
 
         return response()->json("Ivan Rep 0036475497", 200);
     }
+
+    public function  getLog(){
+        $contents = File::get("log");
+
+        return response()->json($contents, 200);
+    }
 }
