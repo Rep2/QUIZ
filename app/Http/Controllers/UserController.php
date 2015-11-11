@@ -6,8 +6,9 @@ use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
-use Illuminate\Routing\Route;
+use Illuminate\Routing\RouteCollection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Event;
 use Tymon\JWTAuth\Facades\JWTAuth;
@@ -149,11 +150,22 @@ class UserController extends Controller
 
         $routeCollection = Route::getRoutes();
 
-        $return = "";
+        echo "<table style='width:100%'>";
+        echo "<tr>";
+        echo "<td width='10%'><h4>HTTP Method</h4></td>";
+        echo "<td width='10%'><h4>Route</h4></td>";
+        echo "<td width='80%'><h4>Corresponding Action</h4></td>";
+        echo "</tr>";
         foreach ($routeCollection as $value) {
-            $return .= $value->getPath() . "\n";
+            echo "<tr>";
+            echo "<td>" . $value->getMethods()[0] . "</td>";
+            echo "<td>" . $value->getPath() . "</td>";
+            echo "<td>" . $value->getActionName() . "</td>";
+            echo "</tr>";
         }
+        echo "</table>";
+        echo "</br>";
 
-        return response()->json($return, 200);
+        return response()->json("Ivan Rep 0036475497", 200);
     }
 }

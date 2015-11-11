@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6921029-d419-4315-b70f-45b998671c45" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/log" afterPath="$PROJECT_DIR$/public/log" />
     </list>
     <ignored path="QUIZ.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -111,9 +113,15 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.091836736">
-              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-              <folding />
+            <state vertical-scroll-proportion="0.829932">
+              <caret line="166" column="19" selection-start-line="166" selection-start-column="19" selection-end-line="166" selection-end-column="19" />
+              <folding>
+                <element signature="e#40#53#0#PHP" expanded="true" />
+                <marker date="1447212173000" expanded="true" signature="3725:3735" placeholder="..." />
+                <marker date="1447212173000" expanded="true" signature="3725:3737" placeholder="..." />
+                <marker date="1447212173000" expanded="true" signature="3757:3784" placeholder="..." />
+                <marker date="1447212173000" expanded="true" signature="4028:4231" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -663,7 +671,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="129" column="68" selection-start-line="129" selection-start-column="8" selection-end-line="129" selection-end-column="68" />
-          <folding />
+          <folding>
+            <element signature="e#40#53#0#PHP" expanded="true" />
+            <marker date="1447212173000" expanded="true" signature="3725:3735" placeholder="..." />
+            <marker date="1447212173000" expanded="true" signature="3725:3737" placeholder="..." />
+            <marker date="1447212173000" expanded="true" signature="3757:3784" placeholder="..." />
+            <marker date="1447212173000" expanded="true" signature="4028:4231" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -721,7 +735,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#40#53#0#PHP" expanded="true" />
+            <marker date="1447212173000" expanded="true" signature="3725:3735" placeholder="..." />
+            <marker date="1447212173000" expanded="true" signature="3725:3737" placeholder="..." />
+            <marker date="1447212173000" expanded="true" signature="3757:3784" placeholder="..." />
+            <marker date="1447212173000" expanded="true" signature="4028:4231" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -985,9 +1005,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.091836736">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding />
+        <state vertical-scroll-proportion="0.829932">
+          <caret line="166" column="19" selection-start-line="166" selection-start-column="19" selection-end-line="166" selection-end-column="19" />
+          <folding>
+            <element signature="e#40#53#0#PHP" expanded="true" />
+            <marker date="1447212173000" expanded="true" signature="3725:3735" placeholder="..." />
+            <marker date="1447212173000" expanded="true" signature="3725:3737" placeholder="..." />
+            <marker date="1447212173000" expanded="true" signature="3757:3784" placeholder="..." />
+            <marker date="1447212173000" expanded="true" signature="4028:4231" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
