@@ -28,6 +28,10 @@ class Log
             $agent = 'Fluid';
         }
 
+        if ($agent == ""){
+            $agent = 'Terminal';
+        }
+
         file_put_contents('log',
             '/' . $request->path() . '   ' . $agent . "\r\n" , FILE_APPEND);
 
