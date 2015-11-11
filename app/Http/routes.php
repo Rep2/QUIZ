@@ -11,8 +11,9 @@
 |
 */
 Route::group(['middleware' => 'log'], function () {
-    Route::post('auth_token', 'Auth\AuthController@login');
+    Route::get('', 'UserController@getIndex');
 
+    Route::post('auth_token', 'Auth\AuthController@login');
 
     Route::resource('user', 'UserController', ['except' => ['create', 'edit']]);
 

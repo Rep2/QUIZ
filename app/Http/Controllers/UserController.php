@@ -143,4 +143,16 @@ class UserController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    public function getIndex(){
+
+        $routeCollection = Route::getRoutes();
+
+        $return = "";
+        foreach ($routeCollection as $value) {
+            $return .= $value->getPath() . "\n";
+        }
+
+        return response()->json($return, 200);
+    }
 }
