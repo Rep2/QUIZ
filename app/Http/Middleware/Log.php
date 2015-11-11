@@ -8,7 +8,8 @@ class Log
 
     public function handle($request, \Closure $next)
     {
-
+        $agent = "";
+        
         if ( stripos($request->header('user_agent'), 'Firefox') !== false ) {
             $agent = 'Firefox';
         } elseif ( stripos($request->header('user_agent'), 'MSIE') !== false ) {
