@@ -38,6 +38,10 @@ class QuizController extends Controller
                 ->orWhere('public', true);
         })->get();
 
+        foreach ($quizzes as $quiz){
+            $quiz["owner_ref"] = "http://46.101.238.99/user" . $quiz["owner_id"];
+        }
+
         return response()->json($quizzes,200);
     }
 
