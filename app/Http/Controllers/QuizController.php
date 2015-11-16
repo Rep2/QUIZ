@@ -67,6 +67,7 @@ class QuizController extends Controller
         $data['owner_id'] = $this->user->id;
 
         $quiz = $this->create($data);
+        $quiz->owner_ref = "http://46.101.238.99/user/" . $quiz->owner_id;
 
         return response()->json($quiz, 200);
 
