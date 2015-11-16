@@ -39,7 +39,7 @@ class QuizController extends Controller
         })->get();
 
         foreach ($quizzes as $quiz){
-            $quiz["owner_ref"] = "http://46.101.238.99/user" . $quiz["owner_id"];
+            $quiz->owner_ref = "http://46.101.238.99/user" . $quiz->owner_id;
         }
 
         return response()->json($quizzes,200);
