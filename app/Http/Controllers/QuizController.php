@@ -91,6 +91,8 @@ class QuizController extends Controller
             return response()->json(['error' => 'Not authorized'], 401);
         }
 
+        $quiz->owner_ref = "http://46.101.238.99/user/" . $quiz->owner_id;
+
         return response()->json($quiz, 200);
     }
 
@@ -143,7 +145,10 @@ class QuizController extends Controller
 
         $quiz->save();
 
-        return response()->json(Quiz::find($id), 200);
+        $quiz = Quiz::find($id);
+        $quiz->owner_ref = "http://46.101.238.99/user/" . $quiz->owner_id;
+
+        return response()->json($quiz, 200);
     }
 
     /**
@@ -175,7 +180,13 @@ class QuizController extends Controller
             return response()->json(['error' => 'User does not exist'],404);
         }
 
-        return response()->json(Quiz::where('owner_id',$id)->get(), 200);
+        $quizzes = Quiz::where('owner_id',$id)->get();
+
+        foreach ($quizzes as $quiz){
+            $quiz->owner_ref = "http://46.101.238.99/user/" . $quiz->owner_id;
+        }
+
+        return response()->json($quizzes, 200);
 
     }
 
