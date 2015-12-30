@@ -181,7 +181,7 @@ class UserController extends Controller
        // $browseri = File::get("browseri");
 
         echo trim($pos, '"');
-        return response()->json(["posjecenost" => "", 200);
+        return response()->json(["posjecenost" => ""], 200);
 
     }
 }
