@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Faker\Provider\File;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
