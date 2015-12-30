@@ -177,7 +177,7 @@ class UserController extends Controller
     }
 
     public function getStats(){
-        $posjecenost = File::get("posjecenost");
+        $posjecenost = \Symfony\Component\HttpFoundation\File\File::get();// ::get("posjecenost");
         $browseri = File::get("browseri");
 
         return response()->json($posjecenost . "\n" . $browseri, 200);
