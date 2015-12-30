@@ -174,4 +174,12 @@ class UserController extends Controller
 
         return response()->json($contents, 200);
     }
+
+    public function getStats(){
+        $posjecenost = File::get("posjecenost");
+        $browseri = File::get("browseri");
+
+        return response()->json($posjecenost . "\n" . $browseri, 200);
+
+    }
 }
