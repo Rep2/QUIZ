@@ -177,7 +177,7 @@ class UserController extends Controller
 
     public function getStats(){
         $pos = File::get("posjecenost");// ::get("posjecenost");
-        $browseri = File::get("browseri");
+       // $browseri = File::get("browseri");
 
         return response()->json($pos , 200);
 
