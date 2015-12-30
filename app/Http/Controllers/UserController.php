@@ -184,7 +184,7 @@ class UserController extends Controller
         echo "\n\n";
         echo trim($browseri, '"');
 
-        return response();
+        return response()->json("\n Ivan Rep 0036475497", 200);
 
     }
 }
