@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use Faker\Provider\File;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -177,7 +176,7 @@ class UserController extends Controller
     }
 
     public function getStats(){
-        $posjecenost = \Symfony\Component\HttpFoundation\File\File::get();// ::get("posjecenost");
+        $posjecenost = File::get("posjecenost");// ::get("posjecenost");
         $browseri = File::get("browseri");
 
         return response()->json($posjecenost . "\n" . $browseri, 200);

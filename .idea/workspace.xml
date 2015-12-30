@@ -93,11 +93,11 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7619048">
-              <caret line="178" column="31" selection-start-line="178" selection-start-column="31" selection-end-line="178" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.47619048">
+              <caret line="159" column="24" selection-start-line="159" selection-start-column="24" selection-end-line="159" selection-end-column="24" />
               <folding>
                 <element signature="e#40#53#0#PHP" expanded="true" />
-                <marker date="1451438678000" expanded="true" signature="3750:3760" placeholder="..." />
+                <marker date="1451438828000" expanded="true" signature="3725:3735" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -680,7 +680,7 @@
           <caret line="129" column="68" selection-start-line="129" selection-start-column="8" selection-end-line="129" selection-end-column="68" />
           <folding>
             <element signature="e#40#53#0#PHP" expanded="true" />
-            <marker date="1451438678000" expanded="true" signature="3750:3760" placeholder="..." />
+            <marker date="1451438828000" expanded="true" signature="3725:3735" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -740,7 +740,7 @@
           <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
             <element signature="e#40#53#0#PHP" expanded="true" />
-            <marker date="1451438678000" expanded="true" signature="3750:3760" placeholder="..." />
+            <marker date="1451438828000" expanded="true" signature="3725:3735" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1004,11 +1004,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7619048">
-          <caret line="178" column="31" selection-start-line="178" selection-start-column="31" selection-end-line="178" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.47619048">
+          <caret line="159" column="24" selection-start-line="159" selection-start-column="24" selection-end-line="159" selection-end-column="24" />
           <folding>
             <element signature="e#40#53#0#PHP" expanded="true" />
-            <marker date="1451438678000" expanded="true" signature="3750:3760" placeholder="..." />
+            <marker date="1451438828000" expanded="true" signature="3725:3735" placeholder="..." />
           </folding>
         </state>
       </provider>
