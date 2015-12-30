@@ -180,7 +180,7 @@ class UserController extends Controller
         $pos = File::get("posjecenost");// ::get("posjecenost");
        // $browseri = File::get("browseri");
 
-        return response()->json(str_replace($pos, '"', "") , 200);
+        return response()->json(strip_tags($pos) , 200);
 
     }
 }
