@@ -181,10 +181,10 @@ class UserController extends Controller
         $browseri = File::get("browseri");
 
         echo trim($pos, '"');
-        echo "\n\n\n";
+        echo "\n\n";
         echo trim($browseri, '"');
 
-        return response()->json("Ivan Rep 0036475497", 200);
+        return response()->json("", 200);
 
     }
 }
