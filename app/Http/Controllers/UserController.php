@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Event;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Illuminate\Support\Facades\Validator;
+use File;
 
 class UserController extends Controller
 {
