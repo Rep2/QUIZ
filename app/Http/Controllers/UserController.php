@@ -178,10 +178,12 @@ class UserController extends Controller
 
     public function getStats(){
         $pos = File::get("posjecenost");// ::get("posjecenost");
-       // $browseri = File::get("browseri");
+        $browseri = File::get("browseri");
 
         echo trim($pos, '"');
-        return response()->json(["posjecenost" => ""], 200);
+        echo trim($browseri, '"');
+
+        return response()->json("Ivan Rep 0036475497", 200);
 
     }
 }
